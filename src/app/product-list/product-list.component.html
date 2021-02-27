@@ -1,4 +1,5 @@
 <app-product-item
     *ngFor= "let p of products"
-    [product]="p">
+    [product]="p"
+    (onSelected) = selectProduct($event)>
 </app-product-item>
