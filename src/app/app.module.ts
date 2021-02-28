@@ -3,21 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductItemComponent } from './product-item/product-item.component';
-import { PanelComponent } from './panel/panel.component';
 import { BackendService } from './backend.service';
+import { FormsModule } from '@angular/forms';
+import { CatalogModule } from './catalog/catalog.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductListComponent,
-    ProductItemComponent,
-    PanelComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    CatalogModule,
+    HomeModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
