@@ -22,7 +22,7 @@ export class BackendService {
         name: 'มะพร้่าวนํ้าหอม',
         price: 500
       }
-    ];;
+    ];
   }
   getProductId(productId:number) : Product {
     return;

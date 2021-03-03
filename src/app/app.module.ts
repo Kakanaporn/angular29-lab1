@@ -7,52 +7,27 @@ import { BackendService } from './backend.service';
 import { FormsModule } from '@angular/forms';
 import { CatalogModule } from './catalog/catalog.module';
 import { HomeModule } from './home/home.module';
-import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductListComponent } from './catalog/product-list/product-list.component';
+import { AppRouteModule } from './app-route/app-route.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
-const routes: Routes = [
-  {
-  path: 'home',
-  component: HomeComponent
-  },
-  {
-  path: '',
-  pathMatch: 'full',
-  redirectTo: 'home'
-  },
-  {
-  path: 'login',
-  component: LoginComponent
-  },
-  {
-  path: 'products',
-  component: ProductListComponent
-  },
-  {
-  path: 'products/:id',
-  component: ProductListComponent
-  },
-  {
-  path: '**',
-  component: PageNotFoundComponent
-  }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    PageNotFoundComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CatalogModule,
     HomeModule,
-    RouterModule.forRoot(routes)
+    BrowserAnimationsModule, 
+    AppRouteModule,
+    MatButtonModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
